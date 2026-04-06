@@ -1,0 +1,91 @@
+# Netfo — Modern ERP for Automotive Businesses
+
+> Netfo is a cloud-based Enterprise Resource Planning (ERP) platform designed specifically for automotive dealerships and distributors worldwide.
+
+## What is Netfo?
+
+Netfo is a multi-tenant SaaS ERP platform that helps automotive businesses manage their entire operations from a single dashboard. It provides specialized modules for CRM, vehicle inventory, finance, HR, procurement, and logistics — all built specifically for the automotive industry.
+
+## Core Modules
+
+### CRM & Sales Pipeline
+- Lead management with Automatic Distribution System (ADSL)
+- Lead assignment strategies: round-robin, load-balancing, performance-based, geographic
+- Full sales lifecycle: Lead → Quotation → Sale Order → Invoice → Delivery
+- Follow-up scheduling and task management
+- Sales analytics and performance dashboards
+
+### Vehicle Inventory Management
+- Complete vehicle catalog (brand, model, variant, specs, images)
+- Stock movements and multi-location inventory tracking
+- Vehicle inspections and condition reporting
+- Pricing history with multi-currency support
+- Reservations and viewing scheduling
+
+### Finance & Accounting
+- Double-entry bookkeeping with 170+ predefined account types
+- Journal entries, general ledger, and trial balance
+- Bank reconciliation and multi-bank support
+- Customer payments, receipts, and contra transactions
+- Multi-currency with exchange rate management
+- Tax settings and financial year management
+
+### Human Resources
+- Employee profiles with contracts, positions, and departments
+- Attendance tracking with configurable policies
+- Payroll processing with salary components
+- Leave management with balance tracking
+- Employee loans with installment tracking
+- Offboarding: resignations, terminations, warnings
+
+### Procurement & Purchasing
+- Purchase orders with approval workflows
+- Supplier management and contracts
+- Goods Receipt Notes (GRN) with quality inspections
+- Request for Quotation (RFQ) process
+- Three-way matching (PO, GRN, Invoice)
+
+### Logistics & Fleet Management
+- Shipment tracking with milestones
+- Fleet vehicle management with driver assignment
+- Route planning and delivery scheduling
+- Shipping documents: BOL, commercial invoices, packing lists
+- Carrier management and freight cost tracking
+
+## Platform Features
+
+- **Multi-Tenant Architecture**: Each company gets isolated data, custom branding, and independent settings
+- **AI Integration**: Built-in AI chat and analytics powered by Claude, Google AI, and OpenAI
+- **Dynamic PDF Templates**: Customizable invoices, quotations, and receipts with company branding
+- **Advanced Permissions**: Role-based access with ALL, OWN, and BRANCH scope types
+- **Multi-Branch Support**: Centralized or decentralized operations across locations
+- **Workflow Engine**: Configurable approvals, status transitions, and business rules
+- **Real-Time Updates**: WebSocket-powered live data synchronization
+- **API Access**: RESTful API with Swagger documentation
+
+## Tech Stack
+
+- Frontend: Next.js, React, Tailwind CSS, Radix UI
+- Backend: NestJS, PostgreSQL, Prisma ORM
+- Infrastructure: AWS (S3, cloud hosting), Redis caching
+- Security: JWT, 2FA (TOTP), WebAuthn, encryption at rest and in transit
+
+## Pricing
+
+Custom pricing based on dealership size and needs. Contact us for a personalized quote.
+
+Plans available: Starter, Professional, Business, Enterprise.
+
+## Target Audience
+
+- Automotive dealerships (new and used vehicles)
+- Vehicle distributors and importers
+- Multi-brand dealership groups
+- Fleet management companies
+- Automotive franchise operations
+
+## Contact
+
+- Website: https://netfo.co
+- Email: netfo.solutions@gmail.com
+- Phone: +971 56 433 5356
