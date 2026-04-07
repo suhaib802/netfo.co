@@ -143,7 +143,7 @@ export default function RootLayout({
       "@type": "ContactPoint",
       contactType: "sales",
       email: "netfo.solutions@gmail.com",
-      telephone: "+971564335356",
+      telephone: "+971544030094",
     },
   };
 

@@ -22,8 +22,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone / WhatsApp",
-    value: "+971 56 433 5356",
-    href: "tel:+971564335356",
+    value: "+971 54 403 0094",
+    href: "tel:+971544030094",
   },
   {
     icon: Globe,

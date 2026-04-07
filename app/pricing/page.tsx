@@ -138,11 +138,11 @@ export default function PricingPage() {
                   netfo.solutions@gmail.com
                 </a>
                 <a
-                  href="tel:+971564335356"
+                  href="tel:+971544030094"
                   className="flex items-center gap-3 text-sm text-gray-600 transition-colors hover:text-brand-600"
                 >
                   <Phone className="h-4 w-4 text-brand-500" />
-                  +971 56 433 5356
+                  +971 54 403 0094
                 </a>
               </div>
             </div>
