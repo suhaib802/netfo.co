@@ -154,8 +154,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Dashboard Preview */}
-          <div className="relative mx-auto mt-16 max-w-5xl">
+          {/* Dashboard Preview — hidden on mobile, shown on md+ */}
+          <div className="relative mx-auto mt-16 hidden max-w-5xl md:block">
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl shadow-gray-200/50">
               {/* Browser chrome */}
               <div className="flex items-center gap-2 border-b border-gray-100 bg-gray-50 px-4 py-3">
@@ -335,6 +335,67 @@ export default function Home() {
             </div>
             {/* Glow effect */}
             <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-r from-brand-200/20 via-brand-100/10 to-brand-200/20 blur-2xl" />
+          </div>
+
+          {/* Mobile Dashboard Preview — simplified for small screens */}
+          <div className="relative mx-auto mt-12 max-w-sm md:hidden">
+            <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl">
+              <div className="flex items-center gap-1.5 border-b border-gray-100 bg-gray-50 px-3 py-2">
+                <div className="h-2 w-2 rounded-full bg-[#FF5F57]" />
+                <div className="h-2 w-2 rounded-full bg-[#FFBD2E]" />
+                <div className="h-2 w-2 rounded-full bg-[#28CA41]" />
+                <span className="ml-2 text-[9px] text-gray-400">netfo.co/erp</span>
+              </div>
+              <div className="p-4">
+                {/* Header */}
+                <div className="mb-4">
+                  <div className="h-3.5 w-24 rounded bg-gray-800/70" />
+                  <div className="mt-1 h-2 w-40 rounded bg-gray-200" />
+                </div>
+                {/* Stat cards */}
+                <div className="mb-4 grid grid-cols-3 gap-2">
+                  {[
+                    { label: "Leads", value: "24", color: "text-brand-600" },
+                    { label: "Revenue", value: "AED 850K", color: "text-green-600" },
+                    { label: "Conversion", value: "38%", color: "text-amber-600" },
+                  ].map((s) => (
+                    <div key={s.label} className="rounded-lg border border-gray-100 bg-gray-50 p-2.5 text-center">
+                      <div className="text-[8px] font-medium uppercase tracking-wider text-gray-400">{s.label}</div>
+                      <div className={`mt-0.5 text-sm font-bold ${s.color}`}>{s.value}</div>
+                    </div>
+                  ))}
+                </div>
+                {/* Mini chart */}
+                <div className="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                  <div className="mb-2 text-[9px] font-semibold text-gray-600">Performance Trends</div>
+                  <svg viewBox="0 0 200 60" className="h-14 w-full">
+                    <polyline points="10,45 40,40 80,25 120,12 150,18 190,30" fill="none" stroke="#23416B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <polyline points="10,48 40,45 80,35 120,20 150,25 190,32" fill="none" stroke="#22C55E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    {[[10,45],[40,40],[80,25],[120,12],[150,18],[190,30]].map(([x,y], i) => (
+                      <circle key={i} cx={x} cy={y} r="2.5" fill="white" stroke="#23416B" strokeWidth="1.5" />
+                    ))}
+                  </svg>
+                </div>
+                {/* Mini pipeline */}
+                <div className="mt-3 space-y-2">
+                  {[
+                    { stage: "NEW", pct: 80 },
+                    { stage: "CONTACTED", pct: 55 },
+                    { stage: "QUALIFIED", pct: 35 },
+                  ].map((s) => (
+                    <div key={s.stage}>
+                      <div className="flex justify-between text-[8px]">
+                        <span className="font-medium text-gray-500">{s.stage}</span>
+                      </div>
+                      <div className="mt-0.5 h-1.5 w-full rounded-full bg-gray-100">
+                        <div className="h-full rounded-full bg-brand-400/60" style={{ width: `${s.pct}%` }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="absolute -inset-3 -z-10 rounded-2xl bg-gradient-to-r from-brand-200/20 via-brand-100/10 to-brand-200/20 blur-xl" />
           </div>
         </div>
       </section>
