@@ -15,11 +15,6 @@ import {
   Zap,
 } from "lucide-react";
 
-const LOGIN_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://netfo.co/erp"
-    : "http://localhost:3000";
-
 const modules = [
   {
     icon: Users,
@@ -143,13 +138,13 @@ export default function Home() {
               finance, HR, logistics, and procurement — all connected, all in real time.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a
-                href={LOGIN_URL}
+              <Link
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-brand-500/25 transition-all hover:bg-brand-600 hover:shadow-xl hover:shadow-brand-500/30"
               >
-                Start Free Trial
+                Get Started
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
               <Link
                 href="/features"
                 className="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-8 py-4 text-base font-semibold text-gray-700 shadow-sm transition-all hover:border-gray-300 hover:bg-gray-50"
@@ -157,63 +152,183 @@ export default function Home() {
                 Explore Features
               </Link>
             </div>
-            <p className="mt-4 text-sm text-gray-400">
-              No credit card required &middot; 14-day free trial &middot; Cancel anytime
-            </p>
           </div>
 
           {/* Dashboard Preview */}
           <div className="relative mx-auto mt-16 max-w-5xl">
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl shadow-gray-200/50">
+              {/* Browser chrome */}
               <div className="flex items-center gap-2 border-b border-gray-100 bg-gray-50 px-4 py-3">
-                <div className="h-3 w-3 rounded-full bg-red-400" />
-                <div className="h-3 w-3 rounded-full bg-yellow-400" />
-                <div className="h-3 w-3 rounded-full bg-green-400" />
-                <span className="ml-2 text-xs text-gray-400">netfo.co/erp</span>
+                <div className="h-3 w-3 rounded-full bg-[#FF5F57]" />
+                <div className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
+                <div className="h-3 w-3 rounded-full bg-[#28CA41]" />
+                <div className="ml-3 flex-1">
+                  <div className="mx-auto max-w-xs rounded-md bg-gray-100 px-3 py-1 text-center text-[10px] text-gray-400">
+                    netfo.co/erp
+                  </div>
+                </div>
               </div>
-              <div className="grid grid-cols-12 gap-0">
-                {/* Sidebar mock */}
-                <div className="col-span-2 border-r border-gray-100 bg-[#0F1B2E] p-4">
-                  <div className="mb-6 h-6 w-16 rounded bg-white/20" />
-                  <div className="space-y-3">
-                    {[...Array(7)].map((_, i) => (
-                      <div key={i} className={`flex items-center gap-2 rounded-md px-2 py-1.5 ${i === 0 ? "bg-white/10" : ""}`}>
-                        <div className="h-4 w-4 rounded bg-white/20" />
-                        <div className={`h-2 rounded bg-white/15 ${i === 0 ? "w-14" : i % 2 === 0 ? "w-12" : "w-16"}`} />
+              <div className="grid grid-cols-12 gap-0" style={{ minHeight: 380 }}>
+                {/* Sidebar */}
+                <div className="col-span-2 border-r border-gray-800/10 bg-[#0F1B2E] px-3 py-4">
+                  {/* Logo area */}
+                  <div className="mb-5 flex items-center gap-2 px-1">
+                    <div className="h-6 w-6 rounded-md bg-brand-400/60" />
+                    <div className="h-3 w-12 rounded bg-white/25" />
+                  </div>
+                  {/* Nav items */}
+                  <div className="space-y-1">
+                    {[
+                      { w: "w-16", active: true },
+                      { w: "w-10" },
+                      { w: "w-14" },
+                      { w: "w-12" },
+                      { w: "w-11" },
+                      { w: "w-14" },
+                      { w: "w-10" },
+                      { w: "w-12" },
+                      { w: "w-9" },
+                    ].map((item, i) => (
+                      <div key={i} className={`flex items-center gap-2.5 rounded-lg px-2 py-2 ${item.active ? "bg-brand-500/30" : "hover:bg-white/5"}`}>
+                        <div className={`h-3.5 w-3.5 rounded ${item.active ? "bg-brand-300/60" : "bg-white/15"}`} />
+                        <div className={`h-2 rounded ${item.w} ${item.active ? "bg-white/40" : "bg-white/12"}`} />
                       </div>
                     ))}
                   </div>
                 </div>
-                {/* Content mock */}
-                <div className="col-span-10 p-6">
-                  <div className="mb-6 flex items-center justify-between">
-                    <div className="h-6 w-32 rounded bg-gray-200" />
-                    <div className="h-8 w-24 rounded-lg bg-brand-100" />
+
+                {/* Main content */}
+                <div className="col-span-10 bg-gray-50/50">
+                  {/* Top bar */}
+                  <div className="flex items-center justify-between border-b border-gray-100 bg-white px-5 py-3">
+                    <div className="flex items-center gap-3">
+                      <div className="h-3 w-3 rounded bg-brand-400/40" />
+                      <div className="h-3 w-20 rounded bg-gray-200" />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="h-7 w-32 rounded-md border border-gray-200 bg-gray-50" />
+                      <div className="h-7 w-7 rounded-md bg-gray-100" />
+                      <div className="h-7 w-7 rounded-md bg-gray-100" />
+                    </div>
                   </div>
-                  {/* Stat cards */}
-                  <div className="mb-6 grid grid-cols-4 gap-4">
-                    {["bg-brand-50", "bg-green-50", "bg-amber-50", "bg-purple-50"].map((bg, i) => (
-                      <div key={i} className={`rounded-xl ${bg} p-4`}>
-                        <div className="h-2 w-12 rounded bg-gray-300/50" />
-                        <div className="mt-2 h-5 w-16 rounded bg-gray-400/30" />
-                        <div className="mt-1 h-2 w-20 rounded bg-gray-300/30" />
+
+                  <div className="p-5">
+                    {/* Page header */}
+                    <div className="mb-5 flex items-center justify-between">
+                      <div>
+                        <div className="h-4 w-28 rounded bg-gray-800/70" />
+                        <div className="mt-1.5 h-2 w-48 rounded bg-gray-300" />
                       </div>
-                    ))}
-                  </div>
-                  {/* Table mock */}
-                  <div className="rounded-xl border border-gray-100">
-                    <div className="grid grid-cols-5 gap-4 border-b border-gray-100 bg-gray-50 px-4 py-2">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <div key={i} className="h-2 w-full rounded bg-gray-200" />
+                      <div className="flex gap-2">
+                        <div className="h-7 w-16 rounded-md bg-brand-500/80" />
+                        <div className="h-7 w-16 rounded-md bg-gray-200" />
+                      </div>
+                    </div>
+
+                    {/* Stat cards row */}
+                    <div className="mb-5 grid grid-cols-7 gap-3">
+                      {[
+                        { label: "Total Leads", value: "24", sub: "+3 this week", color: "text-brand-600" },
+                        { label: "Quotations", value: "12", sub: "4 this month", color: "text-brand-600" },
+                        { label: "Revenue", value: "AED 850K", sub: "AED 120K MTD", color: "text-green-600" },
+                        { label: "Conversion", value: "38%", sub: "Lead to won", color: "text-amber-600" },
+                        { label: "Invoices", value: "18", sub: "3 pending", color: "text-purple-600" },
+                        { label: "Sale Orders", value: "9", sub: "2 this month", color: "text-brand-600" },
+                        { label: "Customers", value: "156", sub: "+8 new", color: "text-green-600" },
+                      ].map((stat) => (
+                        <div key={stat.label} className="rounded-lg border border-gray-100 bg-white p-3">
+                          <div className="text-[8px] font-medium text-gray-400 uppercase tracking-wider">{stat.label}</div>
+                          <div className={`mt-1 text-sm font-bold ${stat.color}`}>{stat.value}</div>
+                          <div className="mt-0.5 text-[7px] text-gray-400">{stat.sub}</div>
+                        </div>
                       ))}
                     </div>
-                    {[1, 2, 3, 4].map((row) => (
-                      <div key={row} className="grid grid-cols-5 gap-4 border-b border-gray-50 px-4 py-3">
-                        {[1, 2, 3, 4, 5].map((col) => (
-                          <div key={col} className={`h-2 rounded bg-gray-100 ${col === 3 ? "w-2/3" : "w-full"}`} />
-                        ))}
+
+                    {/* Charts row */}
+                    <div className="grid grid-cols-3 gap-3">
+                      {/* Performance chart */}
+                      <div className="col-span-2 rounded-lg border border-gray-100 bg-white p-4">
+                        <div className="mb-3 flex items-center justify-between">
+                          <div>
+                            <div className="text-[10px] font-semibold text-gray-700">Performance Trends</div>
+                            <div className="text-[7px] text-gray-400">Monthly overview (last 6 months)</div>
+                          </div>
+                          <div className="flex gap-3">
+                            {[
+                              { color: "bg-brand-500", label: "Leads" },
+                              { color: "bg-green-500", label: "Invoices" },
+                              { color: "bg-purple-400", label: "Revenue" },
+                            ].map((l) => (
+                              <div key={l.label} className="flex items-center gap-1">
+                                <div className={`h-1.5 w-1.5 rounded-full ${l.color}`} />
+                                <span className="text-[7px] text-gray-400">{l.label}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        {/* Chart area */}
+                        <div className="relative h-28">
+                          <svg viewBox="0 0 400 100" className="h-full w-full" preserveAspectRatio="none">
+                            {/* Grid lines */}
+                            {[0, 25, 50, 75].map((y) => (
+                              <line key={y} x1="0" y1={y} x2="400" y2={y} stroke="#f3f4f6" strokeWidth="0.5" />
+                            ))}
+                            {/* Revenue bars */}
+                            <rect x="110" y="55" width="45" height="45" fill="#E9D5FF" rx="3" />
+                            <rect x="170" y="25" width="45" height="75" fill="#DDD6FE" rx="3" />
+                            <rect x="230" y="35" width="45" height="65" fill="#E9D5FF" rx="3" />
+                            {/* Line - Leads */}
+                            <polyline points="30,80 90,75 150,50 210,25 270,30 340,60" fill="none" stroke="#23416B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <polyline points="30,80 90,75 150,50 210,25 270,30 340,60" fill="url(#leadGrad)" stroke="none" />
+                            {/* Line - Invoices */}
+                            <polyline points="30,85 90,82 150,60 210,35 270,40 340,55" fill="none" stroke="#22C55E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            {/* Dots */}
+                            {[[30,80],[90,75],[150,50],[210,25],[270,30],[340,60]].map(([x,y], i) => (
+                              <circle key={i} cx={x} cy={y} r="3" fill="white" stroke="#23416B" strokeWidth="1.5" />
+                            ))}
+                            <defs>
+                              <linearGradient id="leadGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stopColor="#23416B" stopOpacity="0.08" />
+                                <stop offset="100%" stopColor="#23416B" stopOpacity="0" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                          {/* X-axis labels */}
+                          <div className="absolute bottom-0 left-0 right-0 flex justify-between px-2 text-[7px] text-gray-400">
+                            {["Nov", "Dec", "Jan", "Feb", "Mar", "Apr"].map((m) => (
+                              <span key={m}>{m}</span>
+                            ))}
+                          </div>
+                        </div>
                       </div>
-                    ))}
+
+                      {/* Lead Pipeline */}
+                      <div className="rounded-lg border border-gray-100 bg-white p-4">
+                        <div className="text-[10px] font-semibold text-gray-700">Lead Pipeline</div>
+                        <div className="mt-0.5 text-[7px] text-gray-400">24 leads across stages</div>
+                        <div className="mt-3 space-y-2.5">
+                          {[
+                            { stage: "NEW", count: 8, amount: "AED 240K", pct: 80 },
+                            { stage: "CONTACTED", count: 6, amount: "AED 180K", pct: 60 },
+                            { stage: "QUALIFIED", count: 4, amount: "AED 120K", pct: 40 },
+                            { stage: "NEGOTIATION", count: 3, amount: "AED 90K", pct: 30 },
+                            { stage: "PROPOSAL", count: 2, amount: "AED 60K", pct: 20 },
+                            { stage: "WON", count: 1, amount: "AED 160K", pct: 10 },
+                          ].map((s) => (
+                            <div key={s.stage}>
+                              <div className="flex items-center justify-between">
+                                <span className="text-[8px] font-medium text-gray-600">{s.stage}</span>
+                                <span className="text-[8px] font-semibold text-gray-800">{s.count}</span>
+                              </div>
+                              <div className="mt-0.5 h-1.5 w-full rounded-full bg-gray-100">
+                                <div className="h-full rounded-full bg-brand-400/60" style={{ width: `${s.pct}%` }} />
+                              </div>
+                              <div className="mt-0.5 text-[7px] text-green-600">{s.amount}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -424,23 +539,14 @@ export default function Home() {
             boost sales, and grow faster.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href={LOGIN_URL}
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-brand-600 shadow-lg transition-all hover:bg-brand-50"
-            >
-              Start Your Free Trial
-              <ArrowRight className="h-4 w-4" />
-            </a>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/25 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-brand-600 shadow-lg transition-all hover:bg-brand-50"
             >
-              Talk to Sales
+              Contact Us
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <p className="mt-4 text-sm text-brand-200">
-            Free 14-day trial &middot; No credit card required
-          </p>
         </div>
       </section>
 

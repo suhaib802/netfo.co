@@ -47,12 +47,12 @@ export function Header() {
           >
             Log in
           </a>
-          <a
-            href={LOGIN_URL}
+          <Link
+            href="/contact"
             className="rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all hover:bg-brand-600 hover:shadow-md"
           >
             Get Started
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -87,12 +87,13 @@ export function Header() {
               >
                 Log in
               </a>
-              <a
-                href={LOGIN_URL}
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
                 className="rounded-lg bg-brand-500 px-4 py-3 text-center text-base font-medium text-white transition-colors hover:bg-brand-600"
               >
                 Get Started
-              </a>
+              </Link>
             </div>
           </nav>
         </div>

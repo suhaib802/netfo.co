@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     canonical: "https://netfo.co",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo-icon.png",
     apple: "/apple-touch-icon.png",
   },
 };
