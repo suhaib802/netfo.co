@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export function Logo({ className = "", size = "default" }: { className?: string; size?: "small" | "default" | "large" }) {
   const heights = {
-    small: 24,
-    default: 32,
-    large: 40,
+    small: 20,
+    default: 28,
+    large: 36,
   };
 
   const h = heights[size];
@@ -14,10 +14,10 @@ export function Logo({ className = "", size = "default" }: { className?: string;
       <Image
         src="/logo.png"
         alt="Netfo"
-        width={Math.round(h * 4)}
+        width={140}
         height={h}
-        className="h-auto"
-        style={{ height: h, width: "auto" }}
+        className="h-auto max-w-[100px] sm:max-w-[130px]"
+        style={{ height: "auto" }}
         priority
       />
     </div>
