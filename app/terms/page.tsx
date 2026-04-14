@@ -128,8 +128,8 @@ export default function TermsPage() {
             <h2 className="text-xl font-semibold text-gray-900">12. Contact</h2>
             <p className="mt-3">
               For questions about these Terms, contact us at{" "}
-              <a href="mailto:netfo.solutions@gmail.com" className="text-brand-600 hover:text-brand-700">
-                netfo.solutions@gmail.com
+              <a href="mailto:Info@netfo.co" className="text-brand-600 hover:text-brand-700">
+                Info@netfo.co
               </a>
               .
             </p>

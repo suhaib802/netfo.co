@@ -34,11 +34,11 @@ export function Footer() {
               The modern ERP platform built for automotive businesses worldwide.
             </p>
             <div className="mt-4 space-y-2 text-sm text-gray-500">
-              <a href="mailto:netfo.solutions@gmail.com" className="block transition-colors hover:text-brand-600">
-                netfo.solutions@gmail.com
+              <a href="mailto:Info@netfo.co" className="block transition-colors hover:text-brand-600">
+                Info@netfo.co
               </a>
-              <a href="tel:+971544030094" className="block transition-colors hover:text-brand-600">
-                +971 54 403 0094
+              <a href="tel:+971561950304" className="block transition-colors hover:text-brand-600">
+                +971 56 195 0304
               </a>
             </div>
           </div>

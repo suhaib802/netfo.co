@@ -16,14 +16,14 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "netfo.solutions@gmail.com",
-    href: "mailto:netfo.solutions@gmail.com",
+    value: "Info@netfo.co",
+    href: "mailto:Info@netfo.co",
   },
   {
     icon: Phone,
     title: "Phone / WhatsApp",
-    value: "+971 54 403 0094",
-    href: "tel:+971544030094",
+    value: "+971 56 195 0304",
+    href: "tel:+971561950304",
   },
   {
     icon: Globe,

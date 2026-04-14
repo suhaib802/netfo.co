@@ -131,18 +131,18 @@ export default function PricingPage() {
               <div className="mt-10 space-y-4">
                 <p className="text-sm font-medium text-gray-900">Or reach out directly:</p>
                 <a
-                  href="mailto:netfo.solutions@gmail.com"
+                  href="mailto:Info@netfo.co"
                   className="flex items-center gap-3 text-sm text-gray-600 transition-colors hover:text-brand-600"
                 >
                   <Mail className="h-4 w-4 text-brand-500" />
-                  netfo.solutions@gmail.com
+                  Info@netfo.co
                 </a>
                 <a
-                  href="tel:+971544030094"
+                  href="tel:+971561950304"
                   className="flex items-center gap-3 text-sm text-gray-600 transition-colors hover:text-brand-600"
                 >
                   <Phone className="h-4 w-4 text-brand-500" />
-                  +971 54 403 0094
+                  +971 56 195 0304
                 </a>
               </div>
             </div>

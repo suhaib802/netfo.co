@@ -123,8 +123,8 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-semibold text-gray-900">10. Contact Us</h2>
             <p className="mt-3">
               If you have any questions about this Privacy Policy, please contact us at{" "}
-              <a href="mailto:netfo.solutions@gmail.com" className="text-brand-600 hover:text-brand-700">
-                netfo.solutions@gmail.com
+              <a href="mailto:Info@netfo.co" className="text-brand-600 hover:text-brand-700">
+                Info@netfo.co
               </a>
               .
             </p>
